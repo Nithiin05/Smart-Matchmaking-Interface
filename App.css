@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Container Settings */
+:root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+}
+
+/* Logo Animation and Styling */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: filter 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #6366f1aa);
+  transform: scale(1.05);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #38bdf8aa);
+}
+
+/* Logo Spin Animation */
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a .logo {
+    animation: slow-spin infinite 25s linear;
+  }
+}
+
+/* Card Layout */
+.card {
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Documentation Link Style */
+.read-the-docs {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
